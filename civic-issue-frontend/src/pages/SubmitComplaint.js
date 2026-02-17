@@ -18,6 +18,7 @@ function SubmitComplaint() {
 
       <textarea
         placeholder="Describe the Issue"
+        value={description}                      // <-- use the state variable
         onChange={(e) => setDescription(e.target.value)}
       ></textarea>
 
