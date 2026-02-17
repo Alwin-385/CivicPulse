@@ -1,0 +1,94 @@
+.dashboard-container {
+  display: flex;
+}
+
+.dashboard-content {
+  margin-left: 260px;                 /* SAME as sidebar width */
+  padding: 40px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  width: calc(100% - 260px);          /* SAME value */
+  box-sizing: border-box;
+}
+
+
+
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+}
+
+.table th, .table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background: #1e3c72;
+  color: white;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 12px;
+}
+
+.status.pending {
+  background: orange;
+}
+
+.status.in\ progress {
+  background: blue;
+}
+
+.status.resolved {
+  background: green;
+}
+
+.small-btn {
+  margin-right: 5px;
+  padding: 5px 8px;
+  border: none;
+  background: #2a5298;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  background: #1e3c72;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.list-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
