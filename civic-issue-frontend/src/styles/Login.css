@@ -46,3 +46,11 @@ body {
 .login-card button:hover {
   background: #1e3c72;
 }
+
+.login-card {
+  background: white;
+  padding: 40px;
+  width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}

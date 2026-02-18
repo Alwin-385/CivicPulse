@@ -1,23 +1,32 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
-import "../styles/Dashboard.css";
+import AdminLayout from "../layouts/AdminLayout";
+import { FaCheckCircle, FaClock, FaTasks } from "react-icons/fa";
 
 function AdminDashboard() {
   return (
-    <div className="dashboard-container">
-      <Sidebar />
+    <AdminLayout>
+      <h1>Issue Status Board</h1>
 
-      <div className="dashboard-content">
-        <h1>Issue Status Board</h1>
+      <div className="cards">
+        <div className="card">
+          <FaTasks size={30} />
+          <h3>Total Complaints</h3>
+          <p>120</p>
+        </div>
 
-        <div className="cards">
-          <div className="card">Total Complaints: 120</div>
-          <div className="card">Pending: 45</div>
-          <div className="card">In Progress: 30</div>
-          <div className="card">Resolved: 45</div>
+        <div className="card">
+          <FaClock size={30} />
+          <h3>Pending</h3>
+          <p>45</p>
+        </div>
+
+        <div className="card">
+          <FaCheckCircle size={30} />
+          <h3>Resolved</h3>
+          <p>75</p>
         </div>
       </div>
-    </div>
+    </AdminLayout>
   );
 }
 

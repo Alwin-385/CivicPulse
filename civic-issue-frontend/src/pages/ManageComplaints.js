@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import "../styles/Dashboard.css";
 
 function ManageComplaints() {
+
   const complaints = [
     { id: 101, user: "Arjun", dept: "KSEB", status: "Pending" },
     { id: 102, user: "Meera", dept: "PWD", status: "In Progress" },
   ];
+
+  const [search, setSearch] = useState("");
+
+  const filteredComplaints = complaints.filter((c) =>
+    c.user.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="dashboard-container">
@@ -14,6 +21,16 @@ function ManageComplaints() {
 
       <div className="dashboard-content">
         <h1>Manage Complaints</h1>
+
+        <p>Total Complaints: {complaints.length}</p>
+
+        <input
+          type="text"
+          placeholder="Search by User"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          style={{ padding: "8px", marginBottom: "15px", width: "250px" }}
+        />
 
         <table className="table">
           <thead>
@@ -25,14 +42,15 @@ function ManageComplaints() {
               <th>Action</th>
             </tr>
           </thead>
+
           <tbody>
-            {complaints.map((c) => (
+            {filteredComplaints.map((c) => (
               <tr key={c.id}>
                 <td>{c.id}</td>
                 <td>{c.user}</td>
                 <td>{c.dept}</td>
                 <td>
-                  <span className={`status ${c.status.toLowerCase()}`}>
+                  <span className={`status ${c.status.toLowerCase().replace(" ", "-")}`}>
                     {c.status}
                   </span>
                 </td>

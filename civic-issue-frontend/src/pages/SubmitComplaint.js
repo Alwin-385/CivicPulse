@@ -3,10 +3,27 @@ import "../styles/Form.css";
 
 function SubmitComplaint() {
   const [description, setDescription] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = () => {
+    if (!description) {
+      alert("Please enter description");
+      return;
+    }
+
+    setSuccess(true);
+    setDescription("");
+  };
 
   return (
     <div className="form-container">
       <h2>Submit Complaint</h2>
+
+      {success && (
+        <div className="success-msg">
+          Complaint submitted successfully!
+        </div>
+      )}
 
       <input type="text" placeholder="Location" />
 
@@ -18,13 +35,13 @@ function SubmitComplaint() {
 
       <textarea
         placeholder="Describe the Issue"
-        value={description}                      // <-- use the state variable
+        value={description}
         onChange={(e) => setDescription(e.target.value)}
-      ></textarea>
+      />
 
       <input type="file" />
 
-      <button>Submit Complaint</button>
+      <button onClick={handleSubmit}>Submit Complaint</button>
     </div>
   );
 }
